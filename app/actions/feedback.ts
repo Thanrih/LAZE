@@ -1,10 +1,11 @@
 "use server"
 
 export interface FeedbackState {
-  success: boolean
-  error: boolean
-  message: string
+  success: boolean;
+  error: boolean;
+  message: string;
 }
+
 
 export async function submitFeedback(
   prevState: FeedbackState,
