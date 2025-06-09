@@ -11,6 +11,8 @@ import {
   Navigation,
   Shield,
 } from "lucide-react"
+import Image from "next/image"
+
 
 import { Button } from "@/components/ui/button"
 import { FeedbackForm } from "@/components/feedback-form"
@@ -22,7 +24,12 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between mx-auto">
           <div className="flex items-center gap-2">
-            <Droplets className="h-6 w-6 text-blue-600" />
+            <Image
+                      src="/Frame 42.svg"
+                      alt="Imagem do App2"
+                      width={60}
+                      height={60}
+                      className="rounded-lg object-contain"/>
             <span className="text-xl font-bold">LAZE</span>
           </div>
          <nav className="hidden md:flex justify-center gap-6 w-full">
@@ -69,7 +76,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section id="hero" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-blue-50 to-white ">
+        <section id="hero" className="w-full py-8 md:py-12 lg:py-16 xl:py-20 bg-gradient-to-b from-blue-50 to-white">
           <div className="container px-4 md:px-6 mx-auto">
 
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
@@ -94,10 +101,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className="relative h-[350px] w-full md:h-[450px] lg:h-[500px] rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                  {/* Espaço para imagem do app */}
-                  <span className="text-gray-400">Imagem do App</span>
-                </div>
+                 <Image
+                      src="/815shots_so.png"
+                      alt="Imagem do App"
+                      width={700}
+                      height={600}
+                      className="rounded-lg object-contain"
+                    />
               </div>
             </div>
           </div>
@@ -116,10 +126,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <div className="relative h-[300px] rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                {/* Espaço para imagem do mapa */}
-                <span className="text-gray-400">Imagem do Mapa</span>
-              </div>
+              <Image
+                      src="/mapa.png"
+                      alt="Imagem do App"
+                      width={700}
+                      height={600}
+                      className="rounded-lg object-contain"
+                    />
               <div className="flex flex-col justify-center space-y-4">
                 <ul className="grid gap-6">
                   <li>
@@ -195,14 +208,19 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="relative h-[200px] rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                  {/* Espaço para imagem de alagamento */}
-                  <span className="text-gray-400">Imagem de Alagamento</span>
-                </div>
-                <div className="relative h-[200px] rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                  {/* Espaço para outra imagem de alagamento */}
-                  <span className="text-gray-400">Imagem de Alagamento</span>
-                </div>
+                <Image
+                      src="/b46aea0d-4081-4b59-99b2-d9324bd563ad-1024x497.jpg"
+                      alt="Imagem do App1"
+                      width={700}
+                      height={600}
+                      className="rounded-lg object-contain"
+                    />
+                <Image
+                      src="/asasas.jpeg"
+                      alt="Imagem do App2"
+                      width={700}
+                      height={600}
+                      className="rounded-lg object-contain"/>
               </div>
             </div>
           </div>
@@ -219,43 +237,25 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 md:grid-cols-3 gap-8 py-12">
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                  <CloudRain className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold">Monitoramento</h3>
-                <p className="text-gray-500">
-                  O aplicativo integra dados do Instituto Nacional de Meteorologia e relatórios da Defesa Civil para
-                  monitorar condições climáticas.
-                </p>
-              </div>
-              <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="grid-cols-1 md:grid-cols-3 gap-8 py-12">
+              <div className="flex w-full flex-col items-center justify-center space-y-4 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
                   <MapPin className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold">Mapeamento Colaborativo</h3>
                 <p className="text-gray-500">
-                  Usuários podem marcar áreas alagadas no mapa em tempo real, criando uma rede colaborativa de
-                  informações georreferenciadas.
-                </p>
-              </div>
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                  <Navigation className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold">Rotas Alternativas</h3>
-                <p className="text-gray-500">
-                  Com base nos dados coletados, o aplicativo sugere rotas alternativas para evitar áreas alagadas
-                  durante seu deslocamento.
+                  Usuários podem marcar áreas alagadas no mapa em tempo real, criando uma rede colaborativa de informações georreferenciadas.
                 </p>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="relative h-[400px] w-full max-w-3xl rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                {/* Espaço para demonstração do app */}
-                <span className="text-gray-400">Demonstração do App</span>
-              </div>
+                        <div className="flex justify-center">
+              <Image
+                      src="/283shots_so.png"
+                      alt="Imagem do App2"
+                      width={700}
+                      height={600}
+                      className="rounded-lg object-contain"/>
+             
             </div>
           </div>
         </section>
@@ -465,10 +465,13 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto flex max-w-5xl items-center justify-center py-12">
-              <div className="relative h-[500px] w-full max-w-md rounded-lg bg-blue-500 border border-blue-400 flex items-center justify-center">
-                {/* Espaço para mockup do app */}
-                <span className="text-blue-200">Mockup do App</span>
-              </div>
+              <Image
+                      src="/294shots_so.png"
+                      alt="Imagem do App2"
+                      width={1200}
+                      height={1200}
+                      className="rounded-lg object-contain"/>
+              
             </div>
           </div>
         </section>
