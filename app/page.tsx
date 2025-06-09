@@ -6,7 +6,6 @@ import {
   Users,
   AlertTriangle,
   ThumbsUp,
-  Droplets,
   Shield,
 } from "lucide-react"
 import Image from "next/image"
