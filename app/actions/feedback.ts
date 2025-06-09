@@ -1,18 +1,18 @@
 "use server"
 
 export interface FeedbackState {
-  success: boolean;
-  error: boolean;
-  message: string;
+  success: boolean
+  error: boolean
+  message: string
 }
 
-
 export async function submitFeedback(
-  prevState: FeedbackState,
+  prevState: FeedbackState | null,
   formData: FormData
 ): Promise<FeedbackState> {
-  // Simular delay de processamento
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+
+
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
   try {
     const name = formData.get("name") as string

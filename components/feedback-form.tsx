@@ -1,5 +1,7 @@
 "use client"
 
+import type { FeedbackState } from "@/app/actions/feedback"
+
 import { useState } from "react"
 import { useActionState } from "react"
 import { Button } from "@/components/ui/button"
@@ -12,8 +14,15 @@ import { submitFeedback } from "@/app/actions/feedback"
 import { Loader2, Send, CheckCircle } from "lucide-react"
 
 export function FeedbackForm() {
-  const [state, action, isPending] = useActionState(submitFeedback, null)
-  const [selectedType, setSelectedType] = useState("")
+const [state, action, isPending] = useActionState<FeedbackState, FormData>(
+  submitFeedback,
+  {
+    success: false,
+    error: false,
+    message: "",
+  }
+) 
+const [selectedType, setSelectedType] = useState("")
 
   return (
     <Card className="w-full">
