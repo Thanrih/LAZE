@@ -7,8 +7,6 @@ import {
   AlertTriangle,
   ThumbsUp,
   Droplets,
-  CloudRain,
-  Navigation,
   Shield,
 } from "lucide-react"
 import Image from "next/image"
