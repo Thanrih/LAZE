@@ -479,7 +479,12 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
             <div className="flex items-center gap-2">
-              <Droplets className="h-6 w-6 text-blue-600" />
+              <Image
+                      src="/Frame 42.svg"
+                      alt="Imagem do App2"
+                      width={40}
+                      height={40}
+                      className="rounded-lg object-contain"/>
               <span className="text-lg font-bold">LAZE</span>
             </div>
             <div className="flex gap-4">
