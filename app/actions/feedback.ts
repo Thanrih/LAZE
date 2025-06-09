@@ -1,6 +1,15 @@
 "use server"
 
-export async function submitFeedback(prevState: any, formData: FormData) {
+export interface FeedbackState {
+  success: boolean
+  error: boolean
+  message: string
+}
+
+export async function submitFeedback(
+  prevState: FeedbackState,
+  formData: FormData
+): Promise<FeedbackState> {
   // Simular delay de processamento
   await new Promise((resolve) => setTimeout(resolve, 1000))
 
@@ -33,8 +42,6 @@ export async function submitFeedback(prevState: any, formData: FormData) {
       }
     }
 
-    // Aqui você integraria com seu sistema de feedback
-    // Por exemplo: salvar no banco de dados, enviar por email, etc.
     console.log("Feedback recebido:", {
       name,
       email,
@@ -47,8 +54,8 @@ export async function submitFeedback(prevState: any, formData: FormData) {
       timestamp: new Date().toISOString(),
     })
 
-    // Simular diferentes tipos de resposta baseado no tipo de sugestão
-    let responseMessage = "Obrigado pela sua sugestão! Nossa equipe analisará seu feedback em breve."
+    let responseMessage =
+      "Obrigado pela sua sugestão! Nossa equipe analisará seu feedback em breve."
 
     if (type === "critica" || priority === "critica") {
       responseMessage =
@@ -66,7 +73,7 @@ export async function submitFeedback(prevState: any, formData: FormData) {
       error: false,
       message: responseMessage,
     }
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Erro ao processar feedback:", error)
     return {
       success: false,
