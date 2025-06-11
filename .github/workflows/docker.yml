@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug secrets (não mostrar em produção!)
-        run: |
-          echo "Usuário: ${{ secrets.DOCKER_USERNAME }}"
-          echo "Senha: ${#${{ secrets.DOCKER_PASSWORD }}} caracteres"
-
       - name: Checkout code
         uses: actions/checkout@v3
 
