@@ -23,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: thanrih/laze-app:latest
+          tags: thanrih/laze:latest
